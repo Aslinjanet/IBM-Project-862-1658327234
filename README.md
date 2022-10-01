@@ -25,23 +25,10 @@ void loop()
   Serial.println(dis);
 
     //LED ON
-  if(dis>=100)
-  {
-    digitalWrite(8,HIGH);
-    digitalWrite(7,HIGH);
-  }
+  if(dis>=100) { digitalWrite(8,HIGH); digitalWrite(7,HIGH); }
 
-  //Buzzer For ultrasonic Sensor
-  if(dis>=100)
-  {
-  for(int i=0; i<=30000; i=i+10)
-  {
-  tone(12,i);
-  delay(1000);
-  noTone(12);
-  delay(1000);
-  }
-  }
+//Buzzer For ultrasonic Sensor if(dis>=100) { for(int i=0; i<=30000; i=i+10) { tone(12,i); delay(1000); noTone(12); delay(1000); } }
+
 
 
 
