@@ -1,29 +1,9 @@
 # IBM-Project-862-1658327234
-Smart Waste Management System For Metropolitan Cities
-@@ -0,0 +1,79 @@
-nt t=2;
-int e=3;
+Smart Waste Management System For Metropolitan Cities @@ -0,0 +1,79 @@ nt t=2; int e=3;
 
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(t,OUTPUT);
-  pinMode(e,INPUT);
-  pinMode(12,OUTPUT);
-}
+void setup() { Serial.begin(9600); pinMode(t,OUTPUT); pinMode(e,INPUT); pinMode(12,OUTPUT); }
 
-void loop()
-{
-  //ultrasonic sensor
-  digitalWrite(t,LOW);
-  digitalWrite(t,HIGH);
-  delayMicroseconds(10);
-  digitalWrite(t,LOW);
-  float dur=pulseIn(e,HIGH);
-  float dis=(dur*0.0343)/2;
-  Serial.print("Distance is: ");
-  Serial.println(dis);
-
+void loop() { //ultrasonic sensor digitalWrite(t,LOW); digitalWrite(t,HIGH); delayMicroseconds(10); digitalWrite(t,LOW); float dur=pulseIn(e,HIGH); float dis=(dur*0.0343)/2; Serial.print("Distance is: "); Serial.println(dis);
     //LED ON
   if(dis>=100) { digitalWrite(8,HIGH); digitalWrite(7,HIGH); }
 
