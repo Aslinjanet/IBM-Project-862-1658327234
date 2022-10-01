@@ -34,32 +34,13 @@ void loop()
 
 
     //Temperate Sensor
-  double a= analogRead(A0);
-  double t=(((a/1024)*5)-0.5)*100;
-  Serial.print("Temp Value: ");
-  Serial.println(t);
-  delay(1000);
+ double a= analogRead(A0); double t=(((a/1024)*5)-0.5)*100; Serial.print("Temp Value: "); Serial.println(t); delay(1000);
 
+//LED ON if(t>=100) { digitalWrite(8,HIGH); digitalWrite(7,HIGH); }
 
-  //LED ON
-  if(t>=100)
-  {
-    digitalWrite(8,HIGH);
-    digitalWrite(7,HIGH);
-  }
+//Buzzer for Temperature Sensor if(t>=100) { for(int i=0; i<=30000; i=i+10) { tone(12,i); delay(1000); noTone(12); delay(1000); } }
 
-  //Buzzer for Temperature Sensor
-  if(t>=100)
-  {
-  for(int i=0; i<=30000; i=i+10)
-  {
-  tone(12,i);
-  delay(1000);
-  noTone(12);
-  delay(1000);
-  }
-  }
-
+//LED OFF if(t<100) { digitalWrite(8,LOW); digitalWrite(7,LOW); } }
    //LED OFF
   if(t<100)
   {
